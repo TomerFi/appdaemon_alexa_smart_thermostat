@@ -1,0 +1,26 @@
+{
+  "deploy_settings": {
+    "default": {
+      "skill_id": "",
+      "resources": {
+        "lambda": [
+          {
+            "alexaUsage": [
+              "smartHome/default"
+            ],
+            "codeUri": "lambda",
+            "functionName": "ask-smarthome-appdaemon-custom-thermostat-default",
+            "handler": "lambda_func.lambda_handler",
+            "runtime": "python3.6"
+          }
+        ],
+        "manifest": {
+          "eTag": ""
+        }
+      },
+      "was_cloned": false,
+      "merge": {}
+    }
+  }
+}
+
