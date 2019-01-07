@@ -1,6 +1,6 @@
 # stop gitignoring me
-!*/.ask/*
-!*/.venv/*
+!.ask/*
+!.venv/*
 
 
 # Byte-compiled / optimized / DLL files
