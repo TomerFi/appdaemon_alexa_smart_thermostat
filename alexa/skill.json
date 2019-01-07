@@ -1,0 +1,27 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "Custom AC controlled by AppDaemon in a Home Assistant environment",
+          "examplePhrases": [],
+          "name": "appdaemon-custom-thermostat",
+          "description": "Custom Thermostat controlled by AppDaemon in a Home Assistant environment"
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "",
+      "category": "SMART_HOME",
+      "distributionCountries": []
+    },
+    "apis": {
+      "smartHome": {
+        "endpoint": {
+          "sourceDir": "lambda",
+          "uri": "ask-smarthome-appdaemon-custom-thermostat-default"
+        }
+      }
+    },
+    "manifestVersion": "1.0"
+  }
+}

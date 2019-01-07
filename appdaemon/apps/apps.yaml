@@ -1,0 +1,36 @@
+global_modules:
+  - ir_packets_manager
+  - alexa_request
+  - alexa_response_error
+  - alexa_response_success
+  - little_helpers
+
+smarthome_custom_ac:
+  module: smarthome_custom_ac
+  class: AlexaCustomAC
+  entities:
+    - climate.entity_id
+  default_mode_for_on: "heat"
+  scale: "CELSIUS"
+  global_dependencies:
+    - alexa_requests
+    - alexa_response_error
+    - alexa_response_success
+    - little_helpers
+
+<thermostat_name>_control:
+  module: ir_packets_control
+  class: HandleMqttACUnit
+  climate_entity: climate.entity_id
+  ir_send_service: switch.broadlink_send_packet_X
+  ac_type: "elco_small"
+  default_mode_for_on: "heat"
+  mode_command_topic: "tomerfi_thermostat/<thermostat_name>/mode"
+  temperature_command_topic: "tomerfi_thermostat/<thermostat_name>/temperature"
+  fan_mode_command_topic: "tomerfi_thermostat/<thermostat_name>/fan"
+  
+temperature_sensor_to_mqtt:
+  module: ir_packets_control
+  class: TemperatureSensorToMqtt
+  sensor_entity: sensor.nursery_broadlink_a1_temperature
+  topic: "tomerfi_thermostat/<thermostat_name>/current_temperature"

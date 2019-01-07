@@ -1,0 +1,20 @@
+appdaemon:
+  threads: 10
+  app_dir: <applications_path>
+  api_port: <api_access_port>
+  api_key: <api_password>
+  plugins:
+    HASS:
+      namespace: default
+      type: hass
+      ha_url: <home_assistant_url>
+      token: <long_lived_access_token>
+    MQTT:
+      namespace: mqtt
+      type: mqtt
+      verbose: false
+      client_host: <mqtt_server_name_ip>
+      client_port: <mqtt_server_name_port>
+      client_id: <mqtt_server_client_id>
+      client_user: <mqtt_server_user>
+      client_password: <mqtt_server_password>
