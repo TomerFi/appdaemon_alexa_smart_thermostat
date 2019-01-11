@@ -28,6 +28,10 @@ smarthome_custom_ac:
   mode_command_topic: "tomerfi_thermostat/<thermostat_name>/mode"
   temperature_command_topic: "tomerfi_thermostat/<thermostat_name>/temperature"
   fan_mode_command_topic: "tomerfi_thermostat/<thermostat_name>/fan"
+  # the following are optional and used to keep helper entities (if you have some) in-sync with alexa's commands
+  mode_entity_for_update: input_select.input_select_controlling_operation_mode
+  temperature_entity_for_update: input_number.input_select_controlling_temperature_select 
+  fan_mode_entity_for_update: input_select.input_select_controlling_fan_level
   
 temperature_sensor_to_mqtt:
   module: ir_packets_control
