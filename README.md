@@ -135,7 +135,7 @@ appdaemon:
 Place the following modules from the repository in you `<appdaemon_path>/<apps_path>/`:
 - [/appdaemon/apps/ir_packets_control](/appdaemon/apps/ir_packets_control.py)
 - [/appdaemon/apps/ir_packets_manager](/appdaemon/apps/ir_packets_manager.py)
-- [/appdaemon/apps/little_helpers](/appdaemon/apps/little_helpers.py)
+- [/appdaemon/apps/little_helpers](/appdaemon/apps/little_helpers.py)</br>
 The following modules need to be added only if you plan to use the Alexa skill part of the project, if not you can just skip the following modules:
 - [/appdaemon/apps/alexa_request](/appdaemon/apps/alexa_request.py)
 - [/appdaemon/apps/alexa_response_error](/appdaemon/apps/alexa_response_error.py)
@@ -310,6 +310,7 @@ First, let's configure our applications in `<appdaemon_path>/<apps_path>/apps.ya
 - The `temperature_sensor_to_mqtt` application:
   - For `sensor_entity` update with the full entity name of the sensor which holds the current temperature as its state.
   - For `topic` update the topic from you climate component's `current_temperature_topic` key.
+  - The optional arguments `mode_entity_for_update`,`temperature_entity_for_update`and `fan_mode_entity_for_update`, are optional and used to change the state of any helpers you use for controlling the climate in order to keep your helpers in-sync with alexa's commands to the climate. Please Note, the state is change internally, no action will be taken by Home Assistant based on the state changed according to these option arguments.
 ```yaml
 global_modules:
   - ir_packets_manager
@@ -328,6 +329,10 @@ global_modules:
   mode_command_topic: "tomerfi_thermostat/<thermostat_name>/mode"
   temperature_command_topic: "tomerfi_thermostat/<thermostat_name>/temperature"
   fan_mode_command_topic: "tomerfi_thermostat/<thermostat_name>/fan"
+  # the following are optional and in use only if you have any helper entities you need to keep in-sync with alexa's commands
+  mode_entity_for_update: input_select.input_select_controlling_operation_mode
+  temperature_entity_for_update: input_number.input_select_controlling_temperature_select 
+  fan_mode_entity_for_update: input_select.input_select_controlling_fan_level
   
 temperature_sensor_to_mqtt:
   module: ir_packets_control
