@@ -1,4 +1,17 @@
-# AppDaemon Smart-Home Thermostat Skill for Alexa
+# AppDaemon Smart-Home Thermostat Skill for Alexa</br>![Maintenance](https://img.shields.io/maintenance/no/2019.svg)
+
+**NOT MAINTAINED!**
+
+I'm no longer maintaining this repository!</br>
+That doesn't mean I don't use it, It just means this repository will not be maintained.
+
+This app can be found in [my appdaemon configuration](https://github.com/TomerFi/my_appdaemon_configuration).
+
+You can still use the files :point_up:, if you want.</br>
+These :point_down: are the instructions.
+
+__________________________________________
+
 AppDaemon Smart-Home skill for Alexa delivering Home Assistant's **Climate entities as Thermostat endpoints**.</br>
 This repository covers a couple of **AppDaemon** applications:
 - *Module Name:* `ir_packets_control` *Class Name:* `HandleMqttACUnit'</br>
